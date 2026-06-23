@@ -10,7 +10,7 @@ export default function Hero() {
 
       <div className="container hero__content">
         <div className="hero__text">
-          <span className="section-label">Interior Design & Contracting</span>
+          <span className="section-label">Interior Design & Contracting test</span>
           <h1 className="hero__title">
             Spaces crafted with
             <span className="hero__title-accent"> precision</span> and care
