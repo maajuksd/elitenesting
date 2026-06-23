@@ -40,7 +40,7 @@ export default function Contact() {
               </svg>
               <div>
                 <span className="contact__detail-label">Phone</span>
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
+                <a href="tel:+91 9037216707">+91 9037216707</a>
               </div>
             </div>
             <div className="contact__detail">
@@ -50,7 +50,7 @@ export default function Contact() {
               </svg>
               <div>
                 <span className="contact__detail-label">Email</span>
-                <a href="mailto:hello@elitenesting.com">hello@elitenesting.com</a>
+                <a href="mailto:info@elitenesting.com">info@elitenesting.com</a>
               </div>
             </div>
             <div className="contact__detail">
@@ -82,7 +82,7 @@ export default function Contact() {
                 value={form.name}
                 onChange={handleChange}
                 required
-                placeholder="John Smith"
+                placeholder="Full Name"
               />
             </div>
             <div className="contact__field">
@@ -94,7 +94,7 @@ export default function Contact() {
                 value={form.email}
                 onChange={handleChange}
                 required
-                placeholder="john@example.com"
+                placeholder="Enter your email"
               />
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function Contact() {
                 name="phone"
                 value={form.phone}
                 onChange={handleChange}
-                placeholder="+1 (555) 000-0000"
+                placeholder="Enter your mobile number"
               />
             </div>
             <div className="contact__field">
