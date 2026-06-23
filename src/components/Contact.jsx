@@ -94,7 +94,7 @@ export default function Contact() {
                 value={form.email}
                 onChange={handleChange}
                 required
-                placeholder="john@example.com"
+                placeholder="name@example.com"
               />
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function Contact() {
                 name="phone"
                 value={form.phone}
                 onChange={handleChange}
-                placeholder="+1 (555) 000-0000"
+                placeholder="+91 12345678"
               />
             </div>
             <div className="contact__field">
