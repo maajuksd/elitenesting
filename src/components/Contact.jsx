@@ -50,7 +50,7 @@ export default function Contact() {
               </svg>
               <div>
                 <span className="contact__detail-label">Email</span>
-                <a href="mailto:hello@elitenesting.com">hello@elitenesting.com</a>
+                <a href="mailto:hello@elitenesting.com">info@elitenesting.com</a>
               </div>
             </div>
             <div className="contact__detail">
