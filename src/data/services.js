@@ -37,10 +37,10 @@ export const services = [
 ]
 
 export const stats = [
-  { value: '150+', label: 'Projects Completed' },
-  { value: '12', label: 'Years Experience' },
-  { value: '98%', label: 'Client Satisfaction' },
-  { value: '40+', label: 'Expert Partners' },
+  // { value: '150+', label: 'Projects Completed' },
+  // { value: '12', label: 'Years Experience' },
+  // { value: '98%', label: 'Client Satisfaction' },
+  // { value: '40+', label: 'Expert Partners' },
 ]
 
 export const process = [

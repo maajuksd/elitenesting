@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 
 const navLinks = [
   { href: '#services', label: 'Services' },
   { href: '#about', label: 'About' },
   { href: '#process', label: 'Process' },
   { href: '#contact', label: 'Contact' },
+  { href: '/gallery', label: 'Gallery' },
 ]
 
 export default function Navbar() {
@@ -29,21 +31,33 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
         <a href="#" className="navbar__logo" onClick={closeMenu}>
-          <span className="navbar__logo-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M3 12l9-7 9 7v8a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1v-8z" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </span>
-          <span className="navbar__logo-text">
-            Elite <em>Nesting</em>
-          </span>
+          
+          <span className="navbar__logo-icon">
+  <img
+    src="/logo.png"
+    alt="Elite Nesting Logo"
+    className="navbar__logo-image"
+  />
+</span>
+          {/* <span className="navbar__logo-text">
+            elite<em>Nesting</em>.com
+          </span> */}
         </a>
 
         <nav className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>
           <ul className="navbar__links">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} onClick={closeMenu}>{link.label}</a>
+                {/* <a href={link.href} onClick={closeMenu}>{link.label}</a> */}
+                {link.label === 'Gallery' ? (
+  <Link to="/gallery" onClick={closeMenu}>
+    {link.label}
+  </Link>
+) : (
+  <a href={link.href} onClick={closeMenu}>
+    {link.label}
+  </a>
+)}
               </li>
             ))}
           </ul>
