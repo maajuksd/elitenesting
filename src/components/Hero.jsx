@@ -39,8 +39,8 @@ export default function Hero() {
               </div>
             </div>
             <div className="hero__badge">
-              <span className="hero__badge-number">12+</span>
-              <span className="hero__badge-text">Years of Excellence</span>
+              <span className="hero__badge-number">New</span>
+              <span className="hero__badge-text">to the market </span>
             </div>
           </div>
         </div>

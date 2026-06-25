@@ -58,10 +58,10 @@ export default function Contact() {
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" />
                 <circle cx="12" cy="10" r="3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              {/* <div>
+              <div>
                 <span className="contact__detail-label">Office</span>
-                <span>123 Design Avenue, Suite 400</span>
-              </div> */}
+                <span>Kasaragod, Kerala</span>
+              </div>
             </div>
           </div>
         </div>
