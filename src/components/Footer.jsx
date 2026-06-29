@@ -8,8 +8,8 @@ export default function Footer() {
       <div className="container footer__inner">
         <div className="footer__brand">
           <a href="#" className="footer__logo">
-            Elite <em>Nesting</em>
-          </a>
+  <img src="/logowhite.png" alt="Elite Nesting Logo" />
+</a>
           <p className="footer__tagline">
             Crafting exceptional interiors with precision and care.
           </p>

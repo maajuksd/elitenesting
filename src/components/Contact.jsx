@@ -1,26 +1,26 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './Contact.css'
 
 export default function Contact() {
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
+  // const [form, setForm] = useState({
+  //   name: '',
+  //   email: '',
+  //   phone: '',
+  //   service: '',
+  //   message: '',
+  // })
+  // const [submitted, setSubmitted] = useState(false)
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
+  // const handleChange = (e) => {
+  //   setForm({ ...form, [e.target.name]: e.target.value })
+  // }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
-    setForm({ name: '', email: '', phone: '', service: '', message: '' })
-    setTimeout(() => setSubmitted(false), 4000)
-  }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   setSubmitted(true)
+  //   setForm({ name: '', email: '', phone: '', service: '', message: '' })
+  //   setTimeout(() => setSubmitted(false), 4000)
+  // }
 
   return (
     <section id="contact" className="contact">
@@ -66,7 +66,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <form className="contact__form" onSubmit={handleSubmit}>
+        {/* <form className="contact__form" onSubmit={handleSubmit}>
           {submitted && (
             <div className="contact__success" role="alert">
               Thank you! We&apos;ll be in touch shortly.
@@ -144,7 +144,7 @@ export default function Contact() {
           <button type="submit" className="btn btn--primary contact__submit">
             Send Message
           </button>
-        </form>
+        </form> */}
       </div>
     </section>
   )

@@ -8,6 +8,7 @@ import Process from './components/Process'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Gallery from './pages/Gallery'
+import SairaChat from "./components/SairaChat";
 
 function Home() {
   return (
@@ -21,6 +22,7 @@ function Home() {
         <Contact />
       </main>
       <Footer />
+      <SairaChat />
     </>
   )
 }

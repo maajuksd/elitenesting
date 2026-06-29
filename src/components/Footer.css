@@ -79,3 +79,14 @@
     gap: 2.5rem;
   }
 }
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer__logo img {
+  height: 90px; /* 60px + 50% = 90px */
+  width: auto;
+  display: block;
+  opacity: 77%;
+}
