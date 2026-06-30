@@ -2,12 +2,30 @@ import { useState, useEffect } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 
+// const navLinks = [
+//   { href: '#services', label: 'Services' },
+//   { href: '#about', label: 'About' },
+//   { href: '#process', label: 'Process' },
+//   { href: '#contact', label: 'Contact' },
+//   { href: '/gallery', label: 'Gallery' },
+//   { href: '/gallery', label: 'Utility Hub ⭐' },
+// ]
 const navLinks = [
   { href: '#services', label: 'Services' },
   { href: '#about', label: 'About' },
   { href: '#process', label: 'Process' },
   { href: '#contact', label: 'Contact' },
   { href: '/gallery', label: 'Gallery' },
+
+  {
+    label: 'Utility Hub',
+    children: [
+      { href: '/estimate', label: 'Estimate' },
+      { href: '/cv-maker', label: 'CV Maker' },
+      { href: '/games', label: 'Games' },
+      { href: '/tools', label: 'More Tools' },
+    ],
+  },
 ]
 
 export default function Navbar() {
@@ -46,21 +64,40 @@ export default function Navbar() {
 
         <nav className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>
           <ul className="navbar__links">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                {/* <a href={link.href} onClick={closeMenu}>{link.label}</a> */}
-                {link.label === 'Gallery' ? (
-  <Link to="/gallery" onClick={closeMenu}>
-    {link.label}
-  </Link>
-) : (
-  <a href={link.href} onClick={closeMenu}>
-    {link.label}
-  </a>
-)}
+  {navLinks.map((link) => (
+    <li
+      key={link.label}
+      className={link.children ? 'dropdown' : ''}
+    >
+      {link.children ? (
+        <>
+          <button className="dropdown-btn" type="button">
+  {link.label}
+  <span className="dropdown-arrow">▼</span>
+</button>
+
+          <ul className="dropdown-menu">
+            {link.children.map((item) => (
+              <li key={item.href}>
+                <Link to={item.href} onClick={closeMenu}>
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
+        </>
+      ) : link.label === 'Gallery' ? (
+        <Link to="/gallery" onClick={closeMenu}>
+          {link.label}
+        </Link>
+      ) : (
+        <a href={link.href} onClick={closeMenu}>
+          {link.label}
+        </a>
+      )}
+    </li>
+  ))}
+</ul>
           <a href="#contact" className="navbar__cta" onClick={closeMenu}>
             Get a Quote
           </a>

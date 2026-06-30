@@ -1,0 +1,315 @@
+/* ==========================
+   ESTIMATE PAGE
+========================== */
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#faf8f5;
+    color:#222;
+}
+
+.estimate-container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:140px 20px 60px;
+    min-height:100vh;
+    box-sizing:border-box;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.estimate-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.estimate-header h1{
+    margin:0;
+    font-size:40px;
+    font-weight:800;
+    color:#0f4c81;
+    line-height:1.2;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+}
+
+.company{
+    margin-top:10px;
+    display:inline-block;
+    padding-top:8px;
+    border-top:2px solid #0f4c81;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#666;
+}
+
+.company-logo{
+    width:130px;
+    height:auto;
+}
+
+/* ==========================
+   PROJECT DETAILS
+========================== */
+
+.project{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-bottom:35px;
+}
+
+.project input{
+    padding:13px;
+    border:1px solid #d9d9d9;
+    border-radius:6px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+.project input:focus{
+    border-color:#0f4c81;
+}
+
+/* ==========================
+   TABLE
+========================== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+}
+
+/* Column widths */
+
+th:nth-child(1),
+td:nth-child(1){
+    width:70px;
+    text-align:center;
+}
+
+th:nth-child(2),
+td:nth-child(2){
+    width:auto;
+}
+
+th:nth-child(3),
+td:nth-child(3){
+    width:90px;
+}
+
+th:nth-child(4),
+td:nth-child(4){
+    width:90px;
+}
+
+th:nth-child(5),
+td:nth-child(5){
+    width:110px;
+}
+
+th:nth-child(6),
+td:nth-child(6){
+    width:130px;
+}
+
+th:nth-child(7),
+td:nth-child(7){
+    width:100px;
+}
+
+th{
+    background:#0f4c81;
+    color:#fff;
+    padding:14px 10px;
+    border:1px solid #ccc;
+    font-weight:600;
+}
+
+td{
+    border:1px solid #ddd;
+    padding:8px;
+    vertical-align:middle;
+}
+
+tbody tr:nth-child(even){
+    background:#fafafa;
+}
+
+tbody tr:hover{
+    background:#f5f9ff;
+}
+
+/* ==========================
+   INPUTS
+========================== */
+
+td input,
+td select,
+td textarea{
+    width:100%;
+    padding:9px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    font-size:14px;
+    font-family:inherit;
+    outline:none;
+    box-sizing:border-box;
+    background:#fff;
+}
+
+td input:focus,
+td textarea:focus,
+td select:focus{
+    border-color:#0f4c81;
+}
+
+td input[type="number"]{
+    text-align:right;
+}
+
+td textarea{
+    resize:none;
+    overflow:hidden;
+    line-height:1.4;
+    white-space:normal;
+    word-break:break-word;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+button{
+    padding:12px 24px;
+    border:none;
+    border-radius:6px;
+    background:#0f4c81;
+    color:#fff;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#0b3c66;
+}
+
+.delete{
+    background:#d32f2f;
+}
+
+.delete:hover{
+    background:#b71c1c;
+}
+
+/* ==========================
+   TOTAL
+========================== */
+
+.total{
+    margin-top:40px;
+    text-align:right;
+    color:#0f4c81;
+    font-size:28px;
+    font-weight:700;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width:900px){
+
+    .estimate-header{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+    }
+
+    .project{
+        grid-template-columns:1fr;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    button{
+        width:100%;
+    }
+
+}
+
+/* ==========================
+   PRINT
+========================== */
+
+@media print{
+
+    @page{
+        margin:1.5cm;
+    }
+
+    body{
+        background:#fff;
+    }
+
+    .estimate-container{
+        max-width:100%;
+        padding:0;
+    }
+
+    .no-print{
+        display:none !important;
+    }
+
+    thead{
+        display:table-header-group;
+    }
+
+    table{
+        border-collapse:collapse !important;
+    }
+
+    table,
+    th,
+    td{
+        border:1px solid #000 !important;
+    }
+
+    th{
+        background:#f2f2f2 !important;
+        color:#000 !important;
+        -webkit-print-color-adjust:exact;
+        print-color-adjust:exact;
+    }
+
+    tr,
+    td,
+    th{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+}

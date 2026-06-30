@@ -51,7 +51,11 @@
 }
 
 .hero__description {
+  font-family: var(--font-body);
+  /* or font-family: 'Outfit', sans-serif; */
+
   font-size: 1.1rem;
+  font-weight: 400;
   color: var(--color-text-muted);
   line-height: 1.75;
   max-width: 480px;
@@ -305,11 +309,6 @@
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: center;
-  }
-
-  .hero__description {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .hero__actions {

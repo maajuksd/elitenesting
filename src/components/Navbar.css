@@ -1,4 +1,5 @@
 .navbar {
+  font-family: 'Outfit', sans-serif;
   position: fixed;
   top: 0;
   left: 0;
@@ -21,17 +22,7 @@
   justify-content: space-between;
 }
 
-/* .navbar__logo {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--color-dark);
-  z-index: 101;
-} */
- .navbar__logo-image {
+.navbar__logo-image {
   width: 100px;
   height: 100px;
   object-fit: contain;
@@ -61,6 +52,7 @@
 
 .navbar__links {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -171,7 +163,144 @@
   }
 
   .navbar__links a {
-    font-size: 1.25rem;
-    font-family: var(--font-display);
-  }
+  font-size: 1.25rem;
+  font-family: 'Outfit', sans-serif;
+}
+}
+
+/* Dropdown */
+
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Button */
+.dropdown-btn {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--color-text) !important;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  line-height: normal;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+  transition: color var(--transition);
+}
+
+.dropdown-btn::-moz-focus-inner {
+  border: 0;
+}
+
+.dropdown-btn,
+.dropdown-btn:hover,
+.dropdown-btn:focus,
+.dropdown-btn:focus-visible,
+.dropdown-btn:active,
+.dropdown-btn:visited {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--color-text) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.dropdown-btn:hover {
+  color: var(--color-dark) !important;
+}
+
+.dropdown-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width var(--transition);
+}
+
+.dropdown-btn:hover::after {
+  width: 100%;
+}
+
+/* Hide dropdown by default */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  min-width: 220px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.15);
+
+  list-style: none;
+  padding: 10px 0;
+  margin-top: 8px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+
+  transition: all .25s ease;
+  z-index: 999;
+}
+
+/* Show only when hovering Utility Hub */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Links */
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 12px 18px;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background: #f5f5f5;
+}
+
+.dropdown-arrow {
+  font-size: 0.55rem;
+  margin-top: 1px;
+  transition: transform 0.25s ease;
+}
+
+.dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+ .dropdown-btn {
+  font-size: 1.25rem;
+  font-family: 'Outfit', sans-serif;
+}
 }

@@ -16,9 +16,9 @@ export default function Hero() {
             <span className="hero__title-accent"> precision</span> and care
           </h1>
           <p className="hero__description">
-            Elite Nesting delivers end-to-end interior solutions — from design
-            and permits to contracting and site supervision. We turn your vision
-            into a finished space you&apos;ll love.
+            Elite Nesting is an interior design and contracting company in Kerala specializing in turnkey home interiors, 
+            modular kitchens, architectural planning, building permits, site supervision, and complete project management 
+            for residential and commercial spaces.
           </p>
           <div className="hero__actions">
             <a href="#contact" className="btn btn--primary">Start Your Project</a>
