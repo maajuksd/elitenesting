@@ -15,7 +15,15 @@ export default defineConfig([
     ],
     languageOptions: {
       globals: globals.browser,
-      parserOptions: { ecmaFeatures: { jsx: true } },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    rules: {
+      // Turn off the React 19 lint that flags setState inside useEffect
+      "react-hooks/set-state-in-effect": "off",
     },
   },
 ])

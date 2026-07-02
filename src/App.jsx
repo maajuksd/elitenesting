@@ -9,6 +9,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Gallery from './pages/Gallery'
 import Estimate from './pages/Estimate'
+import Cvmaker from './pages/Cvmaker'
 import SairaChat from "./components/SairaChat";
 
 
@@ -68,6 +69,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/estimate" element={<Estimate />} />
+        <Route path="/cvmaker" element={<Cvmaker />} />
       </Routes>
     </BrowserRouter>
   )

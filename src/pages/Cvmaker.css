@@ -1,0 +1,552 @@
+/* ==========================================================
+   CV Maker — tokens
+   ========================================================== */
+.cv-app {
+  --ink: #1b2430;
+  --paper: #faf8f5;
+  --panel: #ffffff;
+  --accent: #b5502f;
+  --accent-soft: #f1e2da;
+  --slate: #6b7280;
+  --line: #e4dfd6;
+  --panel-border: #e2ded4;
+  --radius: 6px;
+
+  --font-display: "Fraunces", "Iowan Old Style", "Georgia", serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+
+  display: grid;
+  grid-template-columns: minmax(320px, 420px) 1fr;
+  gap: 32px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.cv-app * {
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   Form panel
+   ========================================================== */
+.cv-form {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 28px 26px 34px;
+  height: fit-content;
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+  position: sticky;
+  top: 32px;
+}
+
+.cv-form-header {
+  margin-bottom: 24px;
+}
+
+.cv-eyebrow {
+  margin: 0 0 4px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cv-form-title {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cv-form-sub {
+  margin: 0;
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+.cv-section-block {
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.cv-section-block:first-of-type {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.cv-block-label {
+  margin: 0 0 14px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.cv-block-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.cv-block-header-row .cv-block-label {
+  margin: 0;
+}
+
+/* fields */
+.cv-field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 12px;
+  margin-bottom: 12px;
+}
+
+.cv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12.5px;
+  color: var(--slate);
+}
+
+.cv-field-full {
+  grid-column: 1 / -1;
+}
+
+.cv-field input[type="text"],
+.cv-field input[type="email"],
+.cv-field textarea {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--ink);
+  padding: 9px 10px;
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  background: var(--paper);
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cv-field input:focus,
+.cv-field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.cv-checkbox-field {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.cv-checkbox-field input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--accent);
+}
+
+/* buttons */
+.cv-btn-primary {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.cv-btn-primary:hover {
+  background: var(--accent);
+}
+
+.cv-print-btn {
+  margin-top: 22px;
+}
+
+.cv-btn-outline {
+  padding: 7px 12px;
+  background: transparent;
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.cv-btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.cv-btn-remove {
+  background: none;
+  border: none;
+  color: var(--slate);
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.cv-btn-remove:hover {
+  color: var(--accent);
+}
+
+/* skills input */
+.cv-skill-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.cv-skill-input-row input {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  padding: 9px 10px;
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  background: var(--paper);
+  outline: none;
+}
+
+.cv-skill-input-row input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.cv-skill-chip-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.cv-skill-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 6px 5px 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.cv-skill-chip button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+/* repeatable cards */
+.cv-repeat-card {
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 16px 14px;
+  margin-bottom: 14px;
+  background: var(--paper);
+}
+
+.cv-repeat-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cv-repeat-index {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--slate);
+}
+
+/* ==========================================================
+   CV document preview
+   ========================================================== */
+.cv-preview-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 4px;
+}
+
+.cv-page {
+  width: 100%;
+  max-width: 780px;
+  min-height: 1040px;
+  background: #ffffff;
+  padding: 56px 60px 70px;
+  box-shadow: 0 1px 3px rgba(27, 36, 48, 0.08), 0 12px 32px rgba(27, 36, 48, 0.1);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+.cv-doc-header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 18px;
+  margin-bottom: 26px;
+}
+
+.cv-doc-name {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cv-doc-title {
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.cv-doc-contact {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--slate);
+  letter-spacing: 0.01em;
+}
+
+.cv-doc-section {
+  margin-bottom: 26px;
+}
+
+.cv-doc-section:last-child {
+  margin-bottom: 0;
+}
+
+.cv-doc-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.cv-doc-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.cv-doc-label span {
+  white-space: nowrap;
+}
+
+.cv-doc-summary {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #33404f;
+}
+
+.cv-doc-skill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.cv-doc-skill-list li {
+  font-size: 12.5px;
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+/* timeline entries — chronological, so a connecting rule + marker is warranted */
+.cv-doc-timeline {
+  position: relative;
+}
+
+.cv-doc-entry {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding-left: 4px;
+  padding-bottom: 20px;
+}
+
+.cv-doc-entry:last-child {
+  padding-bottom: 0;
+}
+
+.cv-doc-entry-marker {
+  position: relative;
+  width: 8px;
+  flex: 0 0 8px;
+}
+
+.cv-doc-entry-marker::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+
+.cv-doc-entry-marker::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 3.5px;
+  bottom: -20px;
+  width: 1px;
+  background: var(--line);
+}
+
+.cv-doc-entry:last-child .cv-doc-entry-marker::after {
+  display: none;
+}
+
+.cv-doc-entry-body {
+  flex: 1;
+}
+
+.cv-doc-entry-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.cv-doc-entry-role {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.cv-doc-entry-company {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cv-doc-entry-dates {
+  margin: 0;
+  font-size: 11.5px;
+  color: var(--slate);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.cv-doc-bullets {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #33404f;
+}
+
+.cv-doc-bullets li {
+  margin-bottom: 4px;
+}
+
+.cv-doc-bullets li::marker {
+  color: var(--accent);
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+@media (max-width: 980px) {
+  .cv-app {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .cv-form {
+    position: static;
+    max-height: none;
+  }
+
+  .cv-page {
+    padding: 36px 28px 48px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cv-field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-doc-name {
+    font-size: 30px;
+  }
+}
+
+/* ==========================================================
+   Print — output only the document
+   ========================================================== */
+@media print {
+  .cv-form {
+    display: none;
+  }
+
+  .cv-app {
+    display: block;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .cv-preview-wrap {
+    padding: 0;
+  }
+
+  .cv-page {
+    box-shadow: none;
+    max-width: 100%;
+    padding: 0;
+    min-height: 0;
+  }
+}

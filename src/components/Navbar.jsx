@@ -21,7 +21,7 @@ const navLinks = [
     label: 'Utility Hub',
     children: [
       { href: '/estimate', label: 'Estimate' },
-      { href: '/cv-maker', label: 'CV Maker' },
+      { href: '/cvmaker', label: 'CV Maker' },
       { href: '/games', label: 'Games' },
       { href: '/tools', label: 'More Tools' },
     ],
