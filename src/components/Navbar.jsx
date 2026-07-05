@@ -22,8 +22,10 @@ const navLinks = [
     children: [
       { href: '/estimate', label: 'Estimate' },
       { href: '/cvmaker', label: 'CV Maker' },
-      { href: '/games', label: 'Games' },
+      { href: '/roomdesigner', label: 'Room Designer' },
+      { href: '/areacalculation', label: 'Area Calculation' },
       { href: '/tools', label: 'More Tools' },
+      
     ],
   },
 ]

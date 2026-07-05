@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.rd-page {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f7fbf9;
+  font-family: "Nunito", system-ui, sans-serif;
+  color: #2b2d3a;
+}
+
+/* ---------- Catalog sidebar ---------- */
+
+.rd-catalog {
+  flex: 0 0 280px;
+  width: 280px;
+  padding: 1.75rem 1.5rem;
+  background: #e8dfd0;
+  border-right: 1px solid #d9cdb8;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rd-title {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.rd-subtitle {
+  margin: -0.5rem 0 0 0;
+  font-size: 0.85rem;
+  color: #5c5647;
+}
+
+.rd-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.rd-coin-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #fff3dd;
+  border: 2px solid #ffb74d;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #8a5a00;
+}
+
+.rd-coin-icon {
+  font-size: 1.1rem;
+}
+
+.rd-score {
+  font-size: 0.8rem;
+  color: #5c5647;
+  text-align: right;
+}
+
+.rd-score strong {
+  display: block;
+  font-family: "Baloo 2", sans-serif;
+  font-size: 1.1rem;
+  color: #2b2d3a;
+}
+
+.rd-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.rd-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.7rem;
+  border: none;
+  border-left: 6px solid var(--swatch, #999);
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: left;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.rd-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rd-item-active {
+  outline: 2px solid #4cab7d;
+  outline-offset: -2px;
+}
+
+.rd-item-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.rd-item-icon {
+  font-size: 1.3rem;
+}
+
+.rd-item-cost {
+  font-size: 0.75rem;
+  color: #8a5a00;
+  white-space: nowrap;
+}
+
+.rd-rotate-btn,
+.rd-reset-btn {
+  padding: 0.6rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.rd-rotate-btn {
+  background: #6fa8dc;
+  color: #ffffff;
+}
+
+.rd-reset-btn {
+  background: transparent;
+  border: 2px solid #c9483f;
+  color: #c9483f;
+  margin-top: auto;
+}
+
+.rd-reset-btn:hover {
+  background: #c9483f;
+  color: #ffffff;
+}
+
+/* ---------- Room area & view toggle ---------- */
+
+.rd-room-area {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.rd-view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  background: #ffffff;
+  padding: 4px;
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rd-toggle-btn {
+  padding: 0.45rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #5c5647;
+  cursor: pointer;
+}
+
+.rd-toggle-active {
+  background: #4cab7d;
+  color: #ffffff;
+}
+
+/* ---------- Floor texture (shared look for 2D and 3D) ---------- */
+
+.rd-room,
+.rd-floor3d {
+  background-color: #d9a76c;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+    repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.07) 0 2px, transparent 2px 24px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 0 1px, transparent 1px 96px);
+  background-size: 48px 48px, 48px 48px, 100% 24px, 100% 100%;
+}
+
+/* ---------- 2D room ---------- */
+
+.rd-room {
+  position: relative;
+  border: 10px solid #c9a877;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 2px #f7fbf9, 0 6px 16px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.rd-furniture {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.08s ease;
+}
+
+.rd-furniture:hover {
+  transform: scale(1.03);
+  filter: brightness(0.95);
+}
+
+.rd-furniture-icon {
+  font-size: 1.4rem;
+  pointer-events: none;
+}
+
+.rd-ghost {
+  position: absolute;
+  border-radius: 6px;
+  border: 2px dashed;
+  pointer-events: none;
+}
+
+.rd-ghost-valid {
+  border-color: #4cab7d;
+  background: rgba(76, 171, 125, 0.18);
+}
+
+.rd-ghost-invalid {
+  border-color: #e15554;
+  background: rgba(225, 85, 84, 0.18);
+}
+
+.rd-message {
+  max-width: 600px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #5c5647;
+  margin: 0;
+}
+
+/* ---------- 3D room ----------
+   Everything below is authored flat (floor plane = ground truth), then
+   ONE rotateX on .rd-room3d tilts the whole assembled scene for viewing.
+   Walls and box fronts fold up from their hinge edge with rotateX(-90)/
+   rotateY(90), which is the standard "CSS-only room" technique. */
+
+.rd-stage {
+  width: 100%;
+  padding: 2.5rem 0 3.5rem;
+  display: flex;
+  justify-content: center;
+  perspective: 1500px;
+  perspective-origin: 50% 15%;
+}
+
+.rd-room3d {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(58deg);
+  filter: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.2));
+}
+
+.rd-floor3d {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.rd-wall3d {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.rd-wall-back {
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  background: linear-gradient(180deg, #f1e8d8 0%, #e4d5b8 100%);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.rd-wall-left {
+  transform-origin: left;
+  transform: rotateY(90deg);
+  background: linear-gradient(90deg, #e9dec6 0%, #dccba7 100%);
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.rd-box3d {
+  position: absolute;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.rd-box-top {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+.rd-box-icon {
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.rd-box-front {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  filter: brightness(0.78);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: none;
+}
+
+.rd-box3d:hover .rd-box-top,
+.rd-box3d:hover .rd-box-front {
+  filter: brightness(1.08);
+}
