@@ -13,6 +13,8 @@ import Cvmaker from './pages/Cvmaker'
 import Roomdesigner from './pages/Roomdesigner'
 import AreaCalculation from './pages/AreaCalculation/AreaCalculation'
 import SairaChat from "./components/SairaChat";
+import AdminLogin from "./pages/AdminLogin";
+import AdminRoute from "./components/AdminRoute";
 
 
 function Home() {
@@ -70,7 +72,19 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/estimate" element={<Estimate />} />
+       <Route
+  path="/admin-login"
+  element={<AdminLogin />}
+/>
+
+<Route
+  path="/estimate"
+  element={
+    <AdminRoute>
+      <Estimate />
+    </AdminRoute>
+  }
+/>
         <Route path="/areacalculation" element={<AreaCalculation />} />
         <Route path="/cvmaker" element={<Cvmaker />} />
         <Route path="/roomdesigner" element={<Roomdesigner />} />
